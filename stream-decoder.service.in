@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.raumfeld.StreamDecoder
+Exec=@prefix@/bin/stream-decoder

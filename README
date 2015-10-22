@@ -1,0 +1,39 @@
+==============
+Stream-Decoder
+==============
+
+The stream-decoder is a daemon that fetches audio streams by HTTP and
+decodes them so that another process can access the decoded stream over
+a named pipe.
+
+stream-decoder uses GStreamer for decoding. Some elements of the
+decoding process such as resampling and format conversion have been
+moved out of the GStreamer pipeline and are done by the stream-decoder
+itself for performance reasons.
+
+
+-----
+Usage 
+-----
+
+The stream-decoder is designed to run as separate process.  A client
+communicates with it using D-Bus using the com.raumfeld.StreamDecoder
+service.
+
+
+-----------------------------------
+Copyright 2009 - 2014 Raumfeld GmbH
+-----------------------------------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="com.raumfeld.StreamDecoder">
+	<method name='Decode'>
+                <arg type='t' name='streamID' direction='in'/>
+                <arg type='s' name='uri' direction='in'/>
+		<arg type='ai' name='allowedSamplerates' direction='in'/>
+		<arg type='h' name='pipe' direction='out'/>
+                <annotation name="org.gtk.GDBus.C.UnixFD" value="true"/>
+	</method>
+
+	<method name='Stop'>
+                <arg type='t' name='streamID' direction='in'/>
+	</method>
+
+	<method name='GetSupportedProtocols'>
+		<arg type='as' name='protocols' direction='out'/>
+	</method>
+
+        <method name='Reset'>
+        </method>
+
+	<signal name="Message">
+		<arg name="type" type="s"/>
+		<arg name="content" type="s"/>
+		<arg name='streamID' type='t'/>
+	</signal>
+  </interface>
+</node>
